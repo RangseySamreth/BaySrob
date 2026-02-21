@@ -1,0 +1,935 @@
+[gd_scene load_steps=97 format=3 uid="uid://dm4myeaybwprl"]
+
+[ext_resource type="Texture2D" uid="uid://c7o5bi7vrk858" path="res://Untitled design.png" id="1_efxa6"]
+[ext_resource type="Script" uid="uid://cjp6n8dgjwg22" path="res://main_menu.gd" id="1_pjyto"]
+[ext_resource type="PackedScene" uid="uid://datl01k40pr6b" path="res://glass_wall_3d.tscn" id="2_4lmeg"]
+[ext_resource type="PackedScene" uid="uid://cd3gyt0d7hv06" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall_half.gltf" id="3_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://fmg6hbckkqig" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall_orderwindow.gltf" id="4_w48qg"]
+[ext_resource type="Script" uid="uid://dr01i0o3j1v7n" path="res://order_manager.gd" id="5_rnkwl"]
+[ext_resource type="PackedScene" uid="uid://dro2pkh6qy2ff" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall_window_closed.gltf" id="6_2cqfq"]
+[ext_resource type="Script" uid="uid://bd7alqxllklvt" path="res://queue_manager.gd" id="6_uit24"]
+[ext_resource type="Script" uid="uid://b0xfiebirnmn1" path="res://car_spawner.gd" id="7_ruth0"]
+[ext_resource type="PackedScene" uid="uid://c5c7ie1ybb8ll" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall.gltf" id="8_074og"]
+[ext_resource type="PackedScene" uid="uid://dba5c1pa4k4d8" path="res://car_pathfollow3D.tscn" id="8_ruth0"]
+[ext_resource type="PackedScene" uid="uid://bpenge1jq5fx3" path="res://addons/kaykit_restaurant_bits/Assets/gltf/wall_doorway.gltf" id="9_cegan"]
+[ext_resource type="AudioStream" uid="uid://bl2gyraa66qlx" path="res://carsound.mp3" id="9_pjyto"]
+[ext_resource type="PackedScene" uid="uid://ckn5fdoeyv7e8" path="res://addons/kaykit_restaurant_bits/Assets/gltf/door_B.gltf" id="10_82xsv"]
+[ext_resource type="PackedScene" uid="uid://dfxdgbt8dd7ho" path="res://customerWalkin.tscn" id="10_uit24"]
+[ext_resource type="Script" uid="uid://blp7ygup4v7ch" path="res://customer_order_manager.gd" id="12_pjyto"]
+[ext_resource type="PackedScene" uid="uid://euxdh7lkq0oj" path="res://models/road-intersection.glb" id="13_cegan"]
+[ext_resource type="Script" uid="uid://gwbmkyv37pre" path="res://customer_queue_manager.gd" id="13_sm6fg"]
+[ext_resource type="PackedScene" uid="uid://detoqcrps5ex5" path="res://croad_straight.tscn" id="14_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://b4tgtg0j2dgh8" path="res://models/road-straight.glb" id="14_82xsv"]
+[ext_resource type="Script" uid="uid://bjx2etugl0g37" path="res://customer_spawner.gd" id="14_b17eg"]
+[ext_resource type="PackedScene" uid="uid://cpv75mfsda1ml" path="res://models/pavement.glb" id="16_ryguw"]
+[ext_resource type="PackedScene" uid="uid://h0vrvst3cumo" path="res://models/building-small-d.glb" id="17_d13ii"]
+[ext_resource type="PackedScene" uid="uid://ciijfsf0u2emv" path="res://addons/kaykit_restaurant_bits/Assets/gltf/kitchentable_A.gltf" id="17_lswn8"]
+[ext_resource type="PackedScene" uid="uid://d0nnrx2y4px2v" path="res://models/building-garage.glb" id="18_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://cbcayp0ilfat1" path="res://addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_outercorner.gltf" id="19_0odxb"]
+[ext_resource type="PackedScene" uid="uid://dlk6uuvee3t36" path="res://addons/kaykit_restaurant_bits/Assets/gltf/cuttingboard.gltf" id="19_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://bsduixa03gopx" path="res://addons/kaykit_restaurant_bits/Assets/gltf/plate.gltf" id="20_xuqvo"]
+[ext_resource type="PackedScene" uid="uid://h6kgsjkfg21t" path="res://addons/kaykit_restaurant_bits/Assets/gltf/kitchencounter_innercorner_backsplash.gltf" id="22_kq58d"]
+[ext_resource type="PackedScene" uid="uid://hmcurevo8gvn" path="res://addons/kaykit_restaurant_bits/Assets/gltf/ketchup.gltf" id="23_seu75"]
+[ext_resource type="PackedScene" uid="uid://cid653eg5fulh" path="res://addons/kaykit_restaurant_bits/Assets/gltf/jar_A_small.gltf" id="25_jq2sk"]
+[ext_resource type="PackedScene" uid="uid://dqwjy0jhep35j" path="res://addons/kaykit_restaurant_bits/Assets/gltf/papertowel.gltf" id="26_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://bp2bfp1qfodu7" path="res://Untitled design (4).png" id="28_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://c4ccm2qr5wa58" path="res://models/road-corner.glb" id="29_4lmeg"]
+[ext_resource type="PackedScene" uid="uid://bq5c41fn2kyhc" path="res://addons/kaykit_restaurant_bits/Assets/gltf/table_round_A_small_decorated.gltf" id="30_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://0frv22ush3qe" path="res://addons/kaykit_restaurant_bits/Assets/gltf/table_round_A_small.gltf" id="31_d2t1y"]
+[ext_resource type="PackedScene" uid="uid://btmo5ylgdji5p" path="res://addons/kaykit_restaurant_bits/Assets/gltf/shelf_papertowel_decorated.gltf" id="32_gngh3"]
+[ext_resource type="PackedScene" uid="uid://mjm727xkauwf" path="res://addons/kaykit_restaurant_bits/Assets/gltf/chair_A.gltf" id="34_qnost"]
+[ext_resource type="PackedScene" uid="uid://d21txteo61iul" path="res://addons/kaykit_restaurant_bits/Assets/gltf/chair_stool.gltf" id="35_wnkbs"]
+[ext_resource type="PackedScene" uid="uid://cnycdi6t5tj01" path="res://models/building-small-a.glb" id="36_f6a44"]
+[ext_resource type="PackedScene" uid="uid://b1711sieed2u6" path="res://models/grass-trees.glb" id="37_0cbny"]
+[ext_resource type="PackedScene" uid="uid://dy26b1ba2j2v1" path="res://models/grass-trees-tall.glb" id="38_hrvbo"]
+[ext_resource type="PackedScene" uid="uid://7l1irinimxa" path="res://addons/srcoder_simplecar/car.tscn" id="39_h8e4i"]
+[ext_resource type="PackedScene" uid="uid://mu30r6rmht07" path="res://models/road-split.glb" id="39_uypp3"]
+[ext_resource type="ArrayMesh" uid="uid://drx3c85cfh03l" path="res://addons/kaykit_restaurant_bits/Assets/obj/wall_doorway.obj" id="40_0cp0l"]
+[ext_resource type="ArrayMesh" uid="uid://cipoyejb5373q" path="res://addons/kaykit_restaurant_bits/Assets/obj/door_B.obj" id="41_d2t1y"]
+[ext_resource type="Script" uid="uid://cppi6q6hkn5qn" path="res://path_follow_3d.gd" id="42_d2t1y"]
+[ext_resource type="ArrayMesh" uid="uid://yqe6am36a85i" path="res://addons/kaykit_restaurant_bits/Assets/obj/kitchentable_A.obj" id="47_0cbny"]
+[ext_resource type="PackedScene" uid="uid://8df3ks012wqd" path="res://soda_fountain_machine.glb" id="48_hrvbo"]
+[ext_resource type="Script" uid="uid://c6ork324hujet" path="res://drink_machine.gd" id="51_blkrb"]
+[ext_resource type="PackedScene" uid="uid://cf3tsij4ruoiu" path="res://main_menu_t.tscn" id="51_uypp3"]
+[ext_resource type="AudioStream" uid="uid://7eelaq4pcgj1" path="res://Pouring_sound.mp3" id="52_abqjc"]
+[ext_resource type="Script" uid="uid://dmik5jyv8drh1" path="res://camera_3d.gd" id="53_abqjc"]
+[ext_resource type="PackedScene" uid="uid://cnhbsbtxkdg1i" path="res://lemon_tea11/lemon_tea11.tscn" id="54_rm4vd"]
+[ext_resource type="PackedScene" uid="uid://bj0mm0ume52m8" path="res://drinkpickup.tscn" id="57_rm4vd"]
+[ext_resource type="PackedScene" uid="uid://dmnktxnqh4yc5" path="res://co.tscn" id="57_ruth0"]
+[ext_resource type="PackedScene" uid="uid://dpu6bln8loek7" path="res://player.tscn" id="58_ruth0"]
+[ext_resource type="AudioStream" uid="uid://cndv2f5qq6gpx" path="res://cash-register-purchase-87313.mp3" id="60_ruth0"]
+[ext_resource type="PackedScene" uid="uid://dg005irsk0kga" path="res://control.tscn" id="64_b17eg"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ryguw"]
+panorama = ExtResource("1_efxa6")
+
+[sub_resource type="Sky" id="Sky_d13ii"]
+sky_material = SubResource("PanoramaSkyMaterial_ryguw")
+
+[sub_resource type="Environment" id="Environment_1u8w0"]
+background_mode = 2
+background_energy_multiplier = 1.64
+sky = SubResource("Sky_d13ii")
+
+[sub_resource type="Curve3D" id="Curve3D_gngh3"]
+_data = {
+"points": PackedVector3Array(0, 0, -0.3, 0, 0, 0.3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, -1, 0, -1, 1, 0, 1, 1, 0, 8, 0, 0, 0, 0, 0, 0, 8.642929, 0, 8.327975, 0, 0, 0, 0, 0, 0, 11.159652, 0, 8.318921, 0, 0, 0, 0, 0, 0, 15.967546, 0, 8.324268, 0, 0, 0, 0, 0, 0, 22.365383, 0, 8.36001, 0, 0, 0, 0, 0, 0, 29.165058, 0, 8.443945, 0, 0, 0, 0, 0, 0, 34.839596, 0, 8.432663, 0, 0, 0, 0, 0, 0, 40.665558, 0, 8.486277),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm4vd"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.050980393)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vke2r"]
+material = SubResource("StandardMaterial3D_rm4vd")
+size = Vector2(0.75, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rm4vd"]
+size = Vector3(41, 1, 36)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0odxb"]
+size = Vector2(24, 26)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lswn8"]
+size = Vector2(12, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6iyjs"]
+size = Vector3(1, 0.25, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w656"]
+size = Vector3(1, 0.25, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e71vb"]
+size = Vector3(1, 0.25, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blkrb"]
+albedo_texture = ExtResource("28_h8e4i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_abqjc"]
+size = Vector2(9, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iyjs"]
+albedo_texture = ExtResource("28_h8e4i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4w656"]
+size = Vector2(8.8, 21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2t1y"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gngh3"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cp0l"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0n3wm"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnost"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wnkbs"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f6a44"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cbny"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrvbo"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uypp3"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_abqjc"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e71vb"]
+albedo_texture = ExtResource("28_h8e4i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rnkwl"]
+size = Vector2(35, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_blkrb"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjyto"]
+size = Vector3(5, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sm6fg"]
+size = Vector3(1, 4, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b17eg"]
+size = Vector3(1, 4, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntx8l"]
+size = Vector3(2, 3, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uatky"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqtf5"]
+size = Vector3(15, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vm84"]
+size = Vector3(7, 5, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_pjyto")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1u8w0")
+
+[node name="MainMenu" parent="." instance=ExtResource("51_uypp3")]
+
+[node name="GameplayRoot" type="Node3D" parent="."]
+
+[node name="Walkin_Customer" type="Node3D" parent="GameplayRoot"]
+
+[node name="Customer_Path" parent="GameplayRoot/Walkin_Customer" instance=ExtResource("10_uit24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 3)
+
+[node name="OrderManagerC" type="Node3D" parent="GameplayRoot/Walkin_Customer" node_paths=PackedStringArray("queue_manager")]
+transform = Transform3D(4.3711267e-08, 0, -0.99999726, 0, 1, 0, 0.99999726, 0, 4.3711267e-08, 21, 0, 3)
+script = ExtResource("12_pjyto")
+queue_manager = NodePath("../QueueManagerC")
+
+[node name="QueueManagerC" type="Node3D" parent="GameplayRoot/Walkin_Customer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+script = ExtResource("13_sm6fg")
+
+[node name="Timer" type="Timer" parent="GameplayRoot/Walkin_Customer/QueueManagerC"]
+
+[node name="CustomerSpawner" type="Node3D" parent="GameplayRoot/Walkin_Customer" node_paths=PackedStringArray("path3d", "queue_manager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 3)
+script = ExtResource("14_b17eg")
+path3d = NodePath("../Customer_Path")
+queue_manager = NodePath("../QueueManagerC")
+
+[node name="Timer" type="Timer" parent="GameplayRoot/Walkin_Customer/CustomerSpawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="Car_Path" type="Path3D" parent="GameplayRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, 6)
+curve = SubResource("Curve3D_gngh3")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="GameplayRoot/Car_Path"]
+transform = Transform3D(0.99999684, 0, 8.74225e-08, 0, 1, 0, -8.74225e-08, 0, 0.99999684, 0, 0, 0)
+use_model_front = true
+script = ExtResource("42_d2t1y")
+
+[node name="car" parent="GameplayRoot/Car_Path/PathFollow3D" instance=ExtResource("39_h8e4i")]
+
+[node name="OrderBubble" type="Node3D" parent="GameplayRoot/Car_Path/PathFollow3D"]
+
+[node name="OrderDisplay" type="Marker3D" parent="GameplayRoot/Car_Path/PathFollow3D/OrderBubble"]
+transform = Transform3D(0.9999998, 0, -2.1316282e-14, 0, 1, 0, 2.1316282e-14, 0, 0.9999998, 0.49999905, 1.5, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="GameplayRoot/Car_Path/PathFollow3D/OrderBubble/OrderDisplay"]
+
+[node name="BubbleMesh" type="MeshInstance3D" parent="GameplayRoot/Car_Path/PathFollow3D/OrderBubble"]
+transform = Transform3D(0.9999991, 0, -1.1368684e-13, 0, 1, 0, 1.1368684e-13, 0, 0.9999991, 0.49999714, 1.5, 0)
+mesh = SubResource("QuadMesh_vke2r")
+skeleton = NodePath("../..")
+
+[node name="DriveSound" type="AudioStreamPlayer" parent="GameplayRoot/Car_Path/PathFollow3D"]
+stream = ExtResource("9_pjyto")
+volume_db = 3.0
+
+[node name="OrderManager" type="Node3D" parent="GameplayRoot/Car_Path"]
+script = ExtResource("5_rnkwl")
+
+[node name="QueueManager" type="Node3D" parent="GameplayRoot/Car_Path"]
+script = ExtResource("6_uit24")
+
+[node name="CarSpawner" type="Node3D" parent="GameplayRoot/Car_Path"]
+script = ExtResource("7_ruth0")
+car_scene = ExtResource("8_ruth0")
+
+[node name="SpawnTimer" type="Timer" parent="GameplayRoot/Car_Path/CarSpawner"]
+wait_time = 30.0
+
+[node name="Environment" type="Node3D" parent="GameplayRoot"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -0.25, -4.5)
+visible = false
+shape = SubResource("BoxShape3D_rm4vd")
+debug_color = Color(0.99, 0, 0.11550013, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameplayRoot/Environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("PlaneMesh_0odxb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameplayRoot/Environment/StaticBody3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -17.8)
+mesh = SubResource("PlaneMesh_lswn8")
+
+[node name="pavement2" parent="GameplayRoot/Environment/StaticBody3D" instance=ExtResource("16_ryguw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 15, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/StaticBody3D/pavement2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D/pavement2/StaticBody3D"]
+visible = false
+shape = SubResource("BoxShape3D_6iyjs")
+
+[node name="pavement3" parent="GameplayRoot/Environment/StaticBody3D" instance=ExtResource("16_ryguw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 18, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/StaticBody3D/pavement3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D/pavement3/StaticBody3D"]
+shape = SubResource("BoxShape3D_4w656")
+
+[node name="pavement4" parent="GameplayRoot/Environment/StaticBody3D" instance=ExtResource("16_ryguw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 21, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/StaticBody3D/pavement4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D/pavement4/StaticBody3D"]
+shape = SubResource("BoxShape3D_e71vb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="GameplayRoot/Environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 8)
+material_override = SubResource("StandardMaterial3D_blkrb")
+mesh = SubResource("PlaneMesh_abqjc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="GameplayRoot/Environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -8)
+material_override = SubResource("StandardMaterial3D_6iyjs")
+mesh = SubResource("PlaneMesh_4w656")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="GameplayRoot/Environment/StaticBody3D/MeshInstance3D3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -9)
+material_override = SubResource("StandardMaterial3D_6iyjs")
+mesh = SubResource("PlaneMesh_4w656")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameplayRoot/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("PlaneMesh_0odxb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameplayRoot/Environment/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -17.8)
+mesh = SubResource("PlaneMesh_lswn8")
+
+[node name="Node3D" parent="GameplayRoot/Environment/MeshInstance3D" instance=ExtResource("2_4lmeg")]
+transform = Transform3D(0.0088312235, 0, 1.5999377, 0, 1, 0, -0.999961, 0, 0.014129958, -7.5, 2, 12.243)
+
+[node name="wall_half5" parent="GameplayRoot/Environment" instance=ExtResource("3_ycdy4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.25, 0, -20)
+
+[node name="wall6" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(7.450581e-09, 0, 1, 0, 1, 0, -0.25, 0, 2.9802322e-08, -11.3, 0, 3.5)
+
+[node name="wall4" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-1.0927847e-08, 0, 1, 0, 1, 0, -0.25, 0, -4.371139e-08, -11.3, 0, -5.5)
+
+[node name="wall7" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.75, 0, 10.55)
+
+[node name="wall8" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.75, 0, 7)
+
+[node name="wall9" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.75, 0, -0.5)
+
+[node name="wall_doorway2" parent="GameplayRoot/Environment" instance=ExtResource("9_cegan")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.75, 0, 3.2)
+
+[node name="door_B2" parent="GameplayRoot/Environment" instance=ExtResource("10_82xsv")]
+transform = Transform3D(-0.8660253, 0, -0.5, 0, 1, 0, 0.5, 0, -0.8660253, 13.75, 0, 4)
+
+[node name="wall_orderwindow3" parent="GameplayRoot/Environment" instance=ExtResource("4_w48qg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.75, 0, -3.75)
+
+[node name="wall10" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.75, 0, -7)
+
+[node name="wall11" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, 13.75, 0, -10.75)
+
+[node name="wall12" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -13)
+
+[node name="wall13" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25, 0, -13)
+
+[node name="wall_window_closed3" parent="GameplayRoot/Environment" instance=ExtResource("6_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 0, -13)
+
+[node name="wall14" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 1, 0, -13)
+
+[node name="wall3" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-1.0927847e-08, 0, 1, 0, 1, 0, -0.25, 0, -4.371139e-08, -11.25, 0, 11.9)
+
+[node name="wall_half2" parent="GameplayRoot/Environment" instance=ExtResource("3_ycdy4")]
+transform = Transform3D(-2.1855694e-08, 0, 1, 0, 1, 0, -0.5, 0, -4.371139e-08, -11.25, 0, -12)
+
+[node name="wall_doorway3" parent="GameplayRoot/Environment" instance=ExtResource("9_cegan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -13)
+
+[node name="wall_window_closed2" parent="GameplayRoot/Environment" instance=ExtResource("6_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -13)
+
+[node name="wall18" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, -13)
+
+[node name="wall19" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.25, 0, -15)
+
+[node name="wall20" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.25, 0, -18.25)
+
+[node name="wall21" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25, 0, -22)
+
+[node name="wall22" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -22)
+
+[node name="wall23" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, -22)
+
+[node name="wall_half3" parent="GameplayRoot/Environment" instance=ExtResource("3_ycdy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -22)
+
+[node name="wall24" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -20.25)
+
+[node name="wall25" parent="GameplayRoot/Environment" instance=ExtResource("8_074og")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -17)
+
+[node name="wall_half4" parent="GameplayRoot/Environment" instance=ExtResource("3_ycdy4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, -13.25)
+
+[node name="door_B3" parent="GameplayRoot/Environment" instance=ExtResource("10_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 0, -13)
+
+[node name="road-intersection" parent="GameplayRoot/Environment" instance=ExtResource("13_cegan")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-intersection"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-intersection/StaticBody3D"]
+shape = SubResource("BoxShape3D_d2t1y")
+
+[node name="road-straight2" parent="GameplayRoot/Environment" instance=ExtResource("14_0cp0l")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15, 0, 10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight2/StaticBody3D"]
+shape = SubResource("BoxShape3D_gngh3")
+
+[node name="road-straight18" parent="GameplayRoot/Environment" instance=ExtResource("14_0cp0l")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15, 0, 5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight18/StaticBody3D"]
+shape = SubResource("BoxShape3D_0cp0l")
+
+[node name="road-straight" parent="GameplayRoot/Environment" instance=ExtResource("14_0cp0l")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15, 0, 0)
+
+[node name="road-straight4" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -10, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight4/StaticBody3D"]
+shape = SubResource("BoxShape3D_0n3wm")
+
+[node name="road-straight5" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855696e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855696e-07, -5, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight5/StaticBody3D"]
+shape = SubResource("BoxShape3D_qnost")
+
+[node name="road-straight6" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 0, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight6/StaticBody3D"]
+shape = SubResource("BoxShape3D_wnkbs")
+
+[node name="road-straight7" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 5, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight7/StaticBody3D"]
+shape = SubResource("BoxShape3D_f6a44")
+
+[node name="road-straight8" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 10, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight8/StaticBody3D"]
+shape = SubResource("BoxShape3D_0cbny")
+
+[node name="road-straight9" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 15, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight9/StaticBody3D"]
+shape = SubResource("BoxShape3D_hrvbo")
+
+[node name="pavement2" parent="GameplayRoot/Environment" instance=ExtResource("16_ryguw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 15, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/pavement2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/pavement2/StaticBody3D"]
+shape = SubResource("BoxShape3D_6iyjs")
+
+[node name="pavement3" parent="GameplayRoot/Environment" instance=ExtResource("16_ryguw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 18, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/pavement3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/pavement3/StaticBody3D"]
+shape = SubResource("BoxShape3D_4w656")
+
+[node name="pavement4" parent="GameplayRoot/Environment" instance=ExtResource("16_ryguw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 21, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/pavement4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/pavement4/StaticBody3D"]
+shape = SubResource("BoxShape3D_e71vb")
+
+[node name="road-straight10" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, 20, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight10/StaticBody3D"]
+shape = SubResource("BoxShape3D_uypp3")
+
+[node name="road-straight11" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15, 0, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-straight11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-straight11/StaticBody3D"]
+shape = SubResource("BoxShape3D_abqjc")
+
+[node name="building-small-d" parent="GameplayRoot/Environment" instance=ExtResource("17_d13ii")]
+transform = Transform3D(-9.655597e-07, 0, 9, 0, 9, 0, -9, 0, -9.655597e-07, -31, 0, -13)
+
+[node name="building-garage" parent="GameplayRoot/Environment" instance=ExtResource("18_1u8w0")]
+transform = Transform3D(-20, 0, 1.9629454e-06, 0, 9, 0, -3.019916e-06, 0, -13, 7, 0, 32)
+
+[node name="road-straight12" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -15, 0, 25)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.000001)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.000001)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12/road-straight12/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.000001)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12/road-straight12/road-straight12/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.000001)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12/road-straight12/road-straight12/road-straight12/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000007)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12/road-straight12/road-straight12/road-straight12/road-straight12/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000007)
+
+[node name="road-straight12" parent="GameplayRoot/Environment/road-straight12/road-straight12/road-straight12/road-straight12/road-straight12/road-straight12/road-straight12" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0000007)
+
+[node name="road-straight13" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -20, 0, 15)
+
+[node name="kitchentable_A2" parent="GameplayRoot/Environment" instance=ExtResource("17_lswn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
+
+[node name="kitchencounter_outercorner4" parent="GameplayRoot/Environment" instance=ExtResource("19_0odxb")]
+transform = Transform3D(8.943651e-09, 0, 1, 0, 1, 0, -0.75, 0, 1.1924875e-08, 0, 0, 4)
+
+[node name="kitchencounter_outercorner3" parent="GameplayRoot/Environment" instance=ExtResource("19_0odxb")]
+transform = Transform3D(-1, 0, -6.556708e-08, 0, 1, 0, 8.742275e-08, 0, -0.75, 0, 0, 2.5)
+
+[node name="kitchencounter_outercorner4" parent="GameplayRoot/Environment/kitchencounter_outercorner3" instance=ExtResource("19_0odxb")]
+transform = Transform3D(0.75, 0, -5.563627e-08, 0, 1, 0, 4.1727176e-08, 0, 1, 2.437501, 0, -11.416666)
+
+[node name="kitchencounter_outercorner3" parent="GameplayRoot/Environment/kitchencounter_outercorner3" instance=ExtResource("19_0odxb")]
+transform = Transform3D(-4.371136e-08, 0, 0.75, 0, 1, 0, -1, 0, -3.2783575e-08, 3.562501, 0, -11.416666)
+
+[node name="cuttingboard2" parent="GameplayRoot/Environment" instance=ExtResource("19_a6jrf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
+[node name="plate2" parent="GameplayRoot/Environment" instance=ExtResource("20_xuqvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 1)
+
+[node name="kitchencounter_innercorner_backsplash2" parent="GameplayRoot/Environment" instance=ExtResource("22_kq58d")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -9, 0, 7)
+
+[node name="kitchencounter_innercorner_backsplash3" parent="GameplayRoot/Environment" instance=ExtResource("22_kq58d")]
+transform = Transform3D(-6.556708e-08, 0, 1, 0, 1, 0, -1.5, 0, -4.371139e-08, -9, 0, 5)
+
+[node name="ketchup2" parent="GameplayRoot/Environment" instance=ExtResource("23_seu75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 7.5)
+
+[node name="jar_A_small2" parent="GameplayRoot/Environment" instance=ExtResource("25_jq2sk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 7)
+
+[node name="papertowel2" parent="GameplayRoot/Environment" instance=ExtResource("26_4k2k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="GameplayRoot/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 8)
+material_override = SubResource("StandardMaterial3D_blkrb")
+mesh = SubResource("PlaneMesh_abqjc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="GameplayRoot/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -8)
+material_override = SubResource("StandardMaterial3D_6iyjs")
+mesh = SubResource("PlaneMesh_4w656")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="GameplayRoot/Environment/MeshInstance3D3"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, -9)
+material_override = SubResource("StandardMaterial3D_6iyjs")
+mesh = SubResource("PlaneMesh_4w656")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="GameplayRoot/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 30)
+material_override = SubResource("StandardMaterial3D_e71vb")
+mesh = SubResource("PlaneMesh_rnkwl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="GameplayRoot/Environment/MeshInstance3D4"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -35, 0, -35)
+material_override = SubResource("StandardMaterial3D_e71vb")
+mesh = SubResource("PlaneMesh_rnkwl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="GameplayRoot/Environment/MeshInstance3D4/MeshInstance3D4"]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -40, 0, 0)
+material_override = SubResource("StandardMaterial3D_e71vb")
+mesh = SubResource("PlaneMesh_rnkwl")
+
+[node name="road-corner" parent="GameplayRoot/Environment/MeshInstance3D4/MeshInstance3D4" instance=ExtResource("29_4lmeg")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -49.999992, 0, 15.000002)
+
+[node name="table_round_A_small_decorated2" parent="GameplayRoot/Environment" instance=ExtResource("30_0cp0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
+
+[node name="table_round_A_small2" parent="GameplayRoot/Environment" instance=ExtResource("31_d2t1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3)
+
+[node name="shelf_papertowel_decorated2" parent="GameplayRoot/Environment" instance=ExtResource("32_gngh3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11, 2, 5)
+
+[node name="chair_A2" parent="GameplayRoot/Environment" instance=ExtResource("34_qnost")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4)
+
+[node name="chair_A3" parent="GameplayRoot/Environment" instance=ExtResource("34_qnost")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6, 0, -2)
+
+[node name="chair_stool2" parent="GameplayRoot/Environment" instance=ExtResource("35_wnkbs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -8)
+
+[node name="chair_A4" parent="GameplayRoot/Environment" instance=ExtResource("34_qnost")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, 0, -7)
+
+[node name="building-small-a" parent="GameplayRoot/Environment" instance=ExtResource("36_f6a44")]
+transform = Transform3D(-3.934025e-07, 0, 9, 0, 9, 0, -9, 0, -3.934025e-07, -31, 0, -5)
+
+[node name="building-small-d2" parent="GameplayRoot/Environment" instance=ExtResource("17_d13ii")]
+transform = Transform3D(-3.934025e-07, 0, 9, 0, 9, 0, -9, 0, -3.934025e-07, -31, 0, 3)
+
+[node name="grass-trees" parent="GameplayRoot/Environment" instance=ExtResource("37_0cbny")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -25, 0, 9)
+
+[node name="grass-trees" parent="GameplayRoot/Environment/grass-trees" instance=ExtResource("37_0cbny")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.666666, 0, 0)
+
+[node name="grass-trees-tall" parent="GameplayRoot/Environment" instance=ExtResource("38_hrvbo")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -23, 0, -19)
+
+[node name="grass-trees-tall2" parent="GameplayRoot/Environment" instance=ExtResource("38_hrvbo")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, -6, 0, 24)
+
+[node name="grass-trees-tall3" parent="GameplayRoot/Environment/grass-trees-tall2" instance=ExtResource("38_hrvbo")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, -5.399997, 0, -2.599999)
+
+[node name="grass-trees2" parent="GameplayRoot/Environment" instance=ExtResource("37_0cbny")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 20, 0, 21)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees2" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841856e-07, 0, 1, 0, -2.3841856e-07, 0, 1, 2.3333359, 0, -0.99967146)
+
+[node name="road-straight14" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-7.1525574e-07, 0, -5, 0, 5, 0, 5, 0, -7.1525574e-07, -25, 0, 15)
+
+[node name="road-straight14" parent="GameplayRoot/Environment/road-straight14" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, -9.933976e-08, 0, 1, 0, 9.933976e-08, 0, 1, -1.9073486e-06, 0, 1)
+
+[node name="road-straight14" parent="GameplayRoot/Environment/road-straight14/road-straight14" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, -9.933976e-08, 0, 1, 0, 9.933976e-08, 0, 1, -1.9073486e-06, 0, 1)
+
+[node name="road-straight14" parent="GameplayRoot/Environment/road-straight14/road-straight14/road-straight14" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, -9.9339765e-08, 0, 1, 0, 9.9339765e-08, 0, 1, -1.9073486e-06, 0, 1)
+
+[node name="road-straight15" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -10, 0, 45)
+
+[node name="road-straight15" parent="GameplayRoot/Environment/road-straight15" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-1, 0, -1.5099582e-07, 0, 1, 0, 1.5099582e-07, 0, -1, 9.536743e-07, 0, 1.0000001)
+
+[node name="road-straight15" parent="GameplayRoot/Environment/road-straight15/road-straight15" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.9073486e-06, 0, -0.99999994)
+
+[node name="road-straight15" parent="GameplayRoot/Environment/road-straight15/road-straight15/road-straight15" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-1, 0, -1.5099585e-07, 0, 1, 0, 1.5099585e-07, 0, -1, 1.9073486e-06, 0, 1.0000001)
+
+[node name="road-straight15" parent="GameplayRoot/Environment/road-straight15/road-straight15/road-straight15/road-straight15" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-1, 0, -1.5099585e-07, 0, 1, 0, 1.5099585e-07, 0, -1, 1.9073486e-06, 0, -0.99999994)
+
+[node name="road-straight15" parent="GameplayRoot/Environment/road-straight15/road-straight15/road-straight15/road-straight15/road-straight15" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-1, 0, -1.5099579e-07, 0, 1, 0, 1.5099579e-07, 0, -1, 0, 0, 1.0000001)
+
+[node name="road-straight15" parent="GameplayRoot/Environment/road-straight15/road-straight15/road-straight15/road-straight15/road-straight15/road-straight15" instance=ExtResource("14_82xsv")]
+transform = Transform3D(-1, 0, -1.5099579e-07, 0, 1, 0, 1.5099579e-07, 0, -1, 0, 0, -1)
+
+[node name="road-corner" parent="GameplayRoot/Environment" instance=ExtResource("29_4lmeg")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 25, 0, 45)
+
+[node name="road-straight16" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 25, 0, 40)
+
+[node name="road-straight16" parent="GameplayRoot/Environment/road-straight16" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="road-straight16" parent="GameplayRoot/Environment/road-straight16/road-straight16" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="road-straight16" parent="GameplayRoot/Environment/road-straight16/road-straight16/road-straight16" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="road-straight16" parent="GameplayRoot/Environment/road-straight16/road-straight16/road-straight16/road-straight16" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="road-split" parent="GameplayRoot/Environment" instance=ExtResource("39_uypp3")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 25, 0, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameplayRoot/Environment/road-split"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/road-split/StaticBody3D"]
+shape = SubResource("BoxShape3D_blkrb")
+
+[node name="road-straight17" parent="GameplayRoot/Environment" instance=ExtResource("14_82xsv")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 25, 0, 10)
+
+[node name="road-straight17" parent="GameplayRoot/Environment/road-straight17" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99999964)
+
+[node name="road-straight17" parent="GameplayRoot/Environment/road-straight17/road-straight17" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9999996)
+
+[node name="road-straight17" parent="GameplayRoot/Environment/road-straight17/road-straight17/road-straight17" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99999964)
+
+[node name="road-straight17" parent="GameplayRoot/Environment/road-straight17/road-straight17/road-straight17/road-straight17" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99999964)
+
+[node name="road-straight17" parent="GameplayRoot/Environment/road-straight17/road-straight17/road-straight17/road-straight17/road-straight17" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99999964)
+
+[node name="road-straight17" parent="GameplayRoot/Environment/road-straight17/road-straight17/road-straight17/road-straight17/road-straight17/road-straight17" instance=ExtResource("14_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99999964)
+visible = false
+
+[node name="grass-trees3" parent="GameplayRoot/Environment" instance=ExtResource("37_0cbny")]
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, -15, 0, 50)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="grass-trees3" parent="GameplayRoot/Environment/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3/grass-trees3" instance=ExtResource("37_0cbny")]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.9999926, 0, 2.861023e-06)
+
+[node name="DriveThroughPoints" type="Node3D" parent="GameplayRoot/Environment"]
+
+[node name="WP_2" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.25, 0, 10)
+
+[node name="WP_curve" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 0, 12)
+
+[node name="WP_4" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 14)
+
+[node name="WP_5" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 14.5)
+
+[node name="WP_6" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 14.5)
+
+[node name="WP_7" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 14.5)
+
+[node name="WP_8" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 14.5)
+
+[node name="WP_9" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 14.5)
+
+[node name="WP_10" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 14.5)
+
+[node name="WP_11" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 14.5)
+
+[node name="WP_12" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 14.5)
+
+[node name="WP_13" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 14.5)
+
+[node name="WP_14" type="Marker3D" parent="GameplayRoot/Environment/DriveThroughPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 14.5)
+
+[node name="Node3D" parent="GameplayRoot/Environment" instance=ExtResource("2_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -11.3, 2, 10)
+
+[node name="Node3D2" parent="GameplayRoot/Environment" instance=ExtResource("2_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -11.3, 2, 1)
+
+[node name="Node3D3" parent="GameplayRoot/Environment" instance=ExtResource("2_4lmeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -11.3, 2, -8)
+
+[node name="Node3D4" parent="GameplayRoot/Environment" instance=ExtResource("2_4lmeg")]
+transform = Transform3D(-4.371139e-08, 0, 1.1, 0, 1, 0, -1, 0, -4.8082526e-08, 2, 2, 12)
+
+[node name="WallDoorway" type="MeshInstance3D" parent="GameplayRoot/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 12)
+mesh = ExtResource("40_0cp0l")
+
+[node name="DoorB" type="MeshInstance3D" parent="GameplayRoot/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0, 12)
+mesh = ExtResource("41_d2t1y")
+
+[node name="Node3D5" parent="GameplayRoot/Environment" instance=ExtResource("2_4lmeg")]
+transform = Transform3D(-4.371139e-08, 0, 1.7, 0, 1, 0, -1, 0, -7.430936e-08, 12, 2, 12)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="GameplayRoot/Environment"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 2)
+shape = SubResource("BoxShape3D_pjyto")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.5, -6)
+shape = SubResource("BoxShape3D_sm6fg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 1.5, 9)
+shape = SubResource("BoxShape3D_b17eg")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -5)
+shape = SubResource("BoxShape3D_ntx8l")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 10.75)
+shape = SubResource("BoxShape3D_uatky")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 12)
+shape = SubResource("BoxShape3D_rqtf5")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="GameplayRoot/Environment/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 12)
+shape = SubResource("BoxShape3D_1vm84")
+
+[node name="DrinkMachine" parent="GameplayRoot" instance=ExtResource("48_hrvbo")]
+transform = Transform3D(-2, 0, 2.3841858e-07, 0, 2, 0, -2.3841858e-07, 0, -2, -10, 1.75, -6)
+visible = false
+script = ExtResource("51_blkrb")
+drink_scene = ExtResource("54_rm4vd")
+
+[node name="KitchentableA" type="MeshInstance3D" parent="GameplayRoot/DrinkMachine"]
+transform = Transform3D(-0.5, 0, -5.9604645e-08, 0, 0.5, 0, 5.9604645e-08, 0, -0.5, 0, -0.875, 0)
+mesh = ExtResource("47_0cbny")
+skeleton = NodePath("../../Environment")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameplayRoot/DrinkMachine"]
+
+[node name="Timer" type="Timer" parent="GameplayRoot/DrinkMachine"]
+
+[node name="DispenseSound" type="AudioStreamPlayer" parent="GameplayRoot/DrinkMachine"]
+stream = ExtResource("52_abqjc")
+
+[node name="SpawnPoint1" type="Marker3D" parent="GameplayRoot/DrinkMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, 0)
+
+[node name="SpawnPoint2" type="Marker3D" parent="GameplayRoot/DrinkMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, 0.2)
+
+[node name="SpawnPoint3" type="Marker3D" parent="GameplayRoot/DrinkMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, -0.2)
+
+[node name="PickupArea" parent="GameplayRoot/DrinkMachine" instance=ExtResource("57_rm4vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.000001, 0, -3.0000017)
+
+[node name="PlayerBody" parent="GameplayRoot" instance=ExtResource("58_ruth0")]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 22.5, 0, -8)
+
+[node name="Cooking_Oven" parent="GameplayRoot" instance=ExtResource("57_ruth0")]
+
+[node name="Camera3D" type="Camera3D" parent="GameplayRoot" node_paths=PackedStringArray("target")]
+transform = Transform3D(0.7244444, -0.12940958, 0.6770772, -0.07521549, 0.9615164, 0.2642518, -0.6852175, -0.24236244, 0.6868315, 24, 21, 15)
+current = true
+script = ExtResource("53_abqjc")
+target = NodePath("../PlayerBody")
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" parent="HUDLayer" instance=ExtResource("64_b17eg")]
+process_mode = 3
+
+[node name="MoneySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("60_ruth0")
+
+[connection signal="timeout" from="GameplayRoot/Walkin_Customer/CustomerSpawner/Timer" to="GameplayRoot/Walkin_Customer/CustomerSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="GameplayRoot/DrinkMachine/Timer" to="GameplayRoot/DrinkMachine" method="_on_timer_timeout"]

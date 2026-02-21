@@ -1,0 +1,745 @@
+[gd_scene load_steps=38 format=3 uid="uid://dg005irsk0kga"]
+
+[ext_resource type="Script" uid="uid://cv4dj5dxnmm2k" path="res://control.gd" id="1_pxugv"]
+[ext_resource type="FontFile" uid="uid://bnlhof55m6iq3" path="res://Everlo Sans.ttf" id="2_pxugv"]
+[ext_resource type="Texture2D" uid="uid://d2t8thran0n3" path="res://setting_6619132.png" id="3_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://cakfy1rcqdfsi" path="res://house.png" id="4_am1vj"]
+[ext_resource type="Texture2D" uid="uid://1da3d20mxhpf" path="res://profits_733186.png" id="5_g31lc"]
+[ext_resource type="Texture2D" uid="uid://bt0wg5ykl4a38" path="res://Star.png" id="5_knq72"]
+[ext_resource type="Script" uid="uid://66ljd68fs4gp" path="res://fullscreen_control.gd" id="7_xvdhi"]
+[ext_resource type="Texture2D" uid="uid://b6dhd7p1seaot" path="res://music-player.png" id="8_oq4si"]
+[ext_resource type="Texture2D" uid="uid://b1l8ww7lvhrej" path="res://speaker-filled-audio-tool.png" id="9_m4egf"]
+[ext_resource type="Script" uid="uid://bk23rhqftd23e" path="res://shop.gd" id="10_g31lc"]
+[ext_resource type="Texture2D" uid="uid://c3jw4ovav813d" path="res://close (2).png" id="11_pxugv"]
+[ext_resource type="Texture2D" uid="uid://dymm77qjlj05e" path="res://Shop.png" id="12_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://1qetcpi5qagy" path="res://Oven.png" id="13_g31lc"]
+[ext_resource type="AudioStream" uid="uid://6l1c857hrnob" path="res://material-level-complete-394521.mp3" id="14_g31lc"]
+[ext_resource type="Texture2D" uid="uid://byhuasjk7miyp" path="res://Soda_machine.png" id="14_knq72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou021"]
+bg_color = Color(1, 0.93333334, 0.7607843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fl80"]
+bg_color = Color(0.9876364, 0.9125953, 0.77438956, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jbwv"]
+bg_color = Color(1, 0.9607843, 0.8509804, 0.53333336)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuuv8"]
+bg_color = Color(0, 0, 0, 0.6745098)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pj6v"]
+bg_color = Color(0, 0.89, 0.31150013, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5605"]
+bg_color = Color(0.99607843, 0.92941177, 0.7921569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8627451, 0.7294118, 0.6313726, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
+bg_color = Color(0.6857642, 0, 0.0061178035, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxugv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_87wg0"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3ag6a"]
+color = Color(0.2674077, 0.24685758, 0.19987881, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87wg0"]
+bg_color = Color(1, 0.93333334, 0.7607843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ag6a"]
+bg_color = Color(0.9876364, 0.9125953, 0.77438956, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3rfh"]
+bg_color = Color(1, 0.9607843, 0.8509804, 0.53333336)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g31lc"]
+bg_color = Color(0.96862745, 0.90588236, 0.8156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8901961, 0.7882353, 0.65882355, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.4392157)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvdhi"]
+bg_color = Color(0.96862745, 0.90588236, 0.8156863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8901961, 0.7882353, 0.65882355, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.40784314)
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knq72"]
+bg_color = Color(0.6, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 3.5)
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq4si"]
+bg_color = Color(0.9876364, 0.9125953, 0.77438956, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4egf"]
+bg_color = Color(0.47888, 0.82, 0.29520002, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgp6r"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v61lp"]
+bg_color = Color(0.96862745, 0.90588236, 0.8156863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8627451, 0.7294118, 0.6313726, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_858bn"]
+bg_color = Color(0.99607843, 0.92941177, 0.7921569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8627451, 0.7294118, 0.6313726, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pxugv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 46.0
+offset_right = 98.0
+offset_bottom = 98.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_ou021")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3fl80")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8jbwv")
+text = "       "
+
+[node name="Setting6619132" type="Sprite2D" parent="."]
+position = Vector2(72, 72)
+scale = Vector2(0.04492188, 0.04492188)
+texture = ExtResource("3_eh0v1")
+
+[node name="Shop_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 120.0
+offset_right = 99.0
+offset_bottom = 172.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_ou021")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3fl80")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8jbwv")
+text = "       "
+
+[node name="House" type="Sprite2D" parent="Shop_Button"]
+position = Vector2(27.000008, 26)
+scale = Vector2(0.046874996, 0.046874996)
+texture = ExtResource("4_am1vj")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.5
+offset_top = 41.0
+offset_right = 136.5
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_kuuv8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2pj6v")
+step = 1.0
+show_percentage = false
+
+[node name="Startext" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 22
+text = "3 /  10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Star" type="Sprite2D" parent="ProgressBar"]
+position = Vector2(-10.625, 15.25)
+scale = Vector2(0.119628906, 0.119628906)
+texture = ExtResource("5_knq72")
+
+[node name="Level" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_left = -29.75
+offset_top = -9.5
+offset_right = 10.25
+offset_bottom = 23.5
+theme_override_colors/font_color = Color(0.4, 0.25882354, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -131.75
+offset_right = 212.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5605")
+
+[node name="cross" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 15.749985
+offset_right = 397.0
+offset_bottom = 40.749985
+theme_override_styles/normal = SubResource("StyleBoxFlat_eh0v1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pxugv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am1vj")
+
+[node name="Close(2)" type="Sprite2D" parent="Settings/cross"]
+position = Vector2(13, 13)
+scale = Vector2(0.020507842, 0.020507842)
+texture = ExtResource("11_pxugv")
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 11.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4, 0.25882354, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 77.0
+offset_right = 368.0
+offset_bottom = 116.0
+theme_override_styles/slider = SubResource("StyleBoxLine_87wg0")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_3ag6a")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_3ag6a")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSlider" type="HSlider" parent="Settings/HSlider"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 240.0
+offset_bottom = 89.0
+theme_override_styles/slider = SubResource("StyleBoxLine_87wg0")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_3ag6a")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_3ag6a")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="FullscreenControl" type="CheckButton" parent="Settings"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 190.0
+offset_right = 369.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.2674077, 0.24685758, 0.19987881, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+text = "Full Screen"
+script = ExtResource("7_xvdhi")
+
+[node name="MusicPlayer" type="Sprite2D" parent="Settings"]
+position = Vector2(87.00001, 93.00001)
+scale = Vector2(0.043457, 0.043457)
+texture = ExtResource("8_oq4si")
+
+[node name="SpeakerFilledAudioTool" type="Sprite2D" parent="Settings"]
+position = Vector2(87.000015, 147.00002)
+scale = Vector2(0.05468756, 0.05468756)
+texture = ExtResource("9_m4egf")
+
+[node name="Quit" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 243.75
+offset_right = 335.0
+offset_bottom = 284.75
+scale = Vector2(0.75, 0.75)
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_87wg0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3ag6a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b3rfh")
+text = "Quit"
+
+[node name="Shop" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -151.4375
+offset_right = 336.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5605")
+script = ExtResource("10_g31lc")
+
+[node name="cross" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 19.4375
+offset_right = 618.0
+offset_bottom = 44.4375
+theme_override_styles/normal = SubResource("StyleBoxFlat_eh0v1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pxugv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am1vj")
+
+[node name="Close(2)" type="Sprite2D" parent="Shop/cross"]
+position = Vector2(13, 13)
+scale = Vector2(0.020507842, 0.020507842)
+texture = ExtResource("11_pxugv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop"]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 79.875
+offset_right = 557.0
+offset_bottom = 249.75
+mouse_filter = 2
+theme_override_constants/separation = 15
+
+[node name="Item1" type="Button" parent="Shop/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g31lc")
+button_mask = 0
+
+[node name="Item2" type="Button" parent="Shop/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g31lc")
+button_mask = 0
+
+[node name="Item3" type="Button" parent="Shop/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g31lc")
+button_mask = 0
+
+[node name="Shop2" type="Sprite2D" parent="Shop"]
+position = Vector2(333, -0.5625)
+scale = Vector2(0.26605883, 0.30224606)
+texture = ExtResource("12_eh0v1")
+
+[node name="Soda Machine" type="Panel" parent="Shop"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 60.437515
+offset_right = 294.0
+offset_bottom = 278.4375
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvdhi")
+
+[node name="SodaMachine" type="Sprite2D" parent="Shop/Soda Machine"]
+position = Vector2(136, 104.999985)
+scale = Vector2(0.35842457, 0.35833332)
+texture = ExtResource("14_knq72")
+
+[node name="Buy_Item2" type="Button" parent="Shop/Soda Machine"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 172.0
+offset_right = 162.0
+offset_bottom = 197.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9882353, 0.99607843, 0.9843137, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_knq72")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oq4si")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4egf")
+
+[node name="Lemon" type="Label" parent="Shop/Soda Machine/Buy_Item2"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 65.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 17
+text = "250 $ "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Soda" type="Label" parent="Shop/Soda Machine"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 15.999985
+offset_right = 242.0
+offset_bottom = 61.124985
+theme_override_colors/font_color = Color(0.47058824, 0.34509805, 0.22352941, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 27
+text = "Soda Machine"
+
+[node name="Panel" type="Panel" parent="Shop/Soda Machine"]
+layout_mode = 0
+offset_top = 0.99998474
+offset_right = 273.0
+offset_bottom = 218.99997
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgp6r")
+
+[node name="Stove" type="Panel" parent="Shop"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 62.4375
+offset_right = 621.0
+offset_bottom = 279.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvdhi")
+
+[node name="Buy_Item1" type="Button" parent="Shop/Stove"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 175.0
+offset_right = 172.0
+offset_bottom = 199.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.9882353, 0.99607843, 0.9843137, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_knq72")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oq4si")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4egf")
+
+[node name="Rice" type="Label" parent="Shop/Stove/Buy_Item1"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 67.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 17
+text = "300 $"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stove_text" type="Label" parent="Shop/Stove"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 15.0
+offset_right = 174.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.43137255, 0.3019608, 0.18039216, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 30
+text = "Stove"
+
+[node name="Oven" type="Sprite2D" parent="Shop/Stove"]
+position = Vector2(143, 110)
+scale = Vector2(0.35904667, 0.35904658)
+texture = ExtResource("13_g31lc")
+
+[node name="Money" type="Label" parent="."]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 35.0
+offset_right = 1098.0
+offset_bottom = 80.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_v61lp")
+
+[node name="Money" type="Sprite2D" parent="Money"]
+position = Vector2(9, 24)
+scale = Vector2(0.077148214, 0.077148214)
+texture = ExtResource("5_g31lc")
+
+[node name="MoneyLabel" type="Label" parent="Money"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 6.0
+offset_right = 124.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.47058824, 0.34509805, 0.22352941, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 30
+
+[node name="CongratsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.5
+offset_top = -157.5
+offset_right = 258.5
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_858bn")
+
+[node name="InfoLable" type="Label" parent="CongratsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -228.5
+offset_top = -229.0
+offset_right = 228.5
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.4, 0.25882354, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 21
+text = "You already have a stove that can make Bay Srob
+
+Game Rules:
+• Serve 1 customer = $10
+• Serve 1 customer = ⭐ 1 star
+
+Collect enough stars to level up and unlock more items!
+"
+horizontal_alignment = 1
+
+[node name="Level unlock" type="Label" parent="CongratsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 29.0
+offset_right = 89.5
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4, 0.25882354, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("2_pxugv")
+theme_override_font_sizes/font_size = 32
+text = "Welcome! Level 1 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cross" type="Button" parent="CongratsPanel"]
+layout_mode = 0
+offset_left = 463.5
+offset_top = 15.5
+offset_right = 488.5
+offset_bottom = 40.5
+theme_override_styles/normal = SubResource("StyleBoxFlat_eh0v1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pxugv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am1vj")
+
+[node name="Close(2)" type="Sprite2D" parent="CongratsPanel/cross"]
+position = Vector2(13, 13)
+scale = Vector2(0.020507842, 0.020507842)
+texture = ExtResource("11_pxugv")
+
+[node name="LevelUpSound" type="AudioStreamPlayer2D" parent="CongratsPanel"]
+stream = ExtResource("14_g31lc")
+volume_db = 10.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_gear_pressed"]
+[connection signal="pressed" from="Shop_Button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Settings/cross" to="." method="_on_cross_pressed"]
+[connection signal="toggled" from="Settings/FullscreenControl" to="Settings/FullscreenControl" method="_on_toggled"]
+[connection signal="pressed" from="Settings/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Shop/cross" to="." method="_on_cross2_pressed"]
+[connection signal="pressed" from="Shop/Soda Machine/Buy_Item2" to="." method="_on_buy_soda_pressed"]
+[connection signal="pressed" from="Shop/Stove/Buy_Item1" to="." method="_on_buy_stove_pressed"]
+[connection signal="pressed" from="CongratsPanel/cross" to="." method="_on_cross_Congrat_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://1pwe5ylcnaqq"]
+
+[ext_resource type="PackedScene" uid="uid://cjm180oqt1gcm" path="res://MyBelovedCharacter.glb" id="1_fb3t6"]
+
+[node name="CharacterBody3D" type="Node3D"]
+
+[node name="MyBelovedCharacter" parent="." instance=ExtResource("1_fb3t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MyBelovedCharacter"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

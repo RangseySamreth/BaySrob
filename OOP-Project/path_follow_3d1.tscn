@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyd715ekuwthm"]
+
+[ext_resource type="PackedScene" uid="uid://dbtayfhsqyqsv" path="res://Walking_ani.glb" id="1_4m6op"]
+[ext_resource type="Script" uid="uid://yi5wsvme56eu" path="res://customer.gd" id="2_yev1u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmvjj"]
+size = Vector3(5, 7, 7)
+
+[node name="PathFollow3D" type="PathFollow3D"]
+transform = Transform3D(-0.9999082, -1.9030374e-07, 0.013347073, -4.6895566e-13, 1, 1.42579065e-05, -0.013347073, 1.4256676e-05, -0.9999082, 0, 0, 0)
+use_model_front = true
+
+[node name="Walking_ani" parent="." instance=ExtResource("1_4m6op")]
+transform = Transform3D(0.29997414, -2.608158e-12, 0.0040040733, 5.708986e-08, 0.30000004, -4.2770034e-06, -0.0040040733, 4.2773495e-06, 0.29997414, -0.017918393, -0.0122859385, 0.04901537)
+script = ExtResource("2_yev1u")
+
+[node name="Area3D" type="Area3D" parent="Walking_ani"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walking_ani/Area3D"]
+transform = Transform3D(1, -2.3163701e-16, -2.842171e-14, 1.3552525e-20, 1, -4.297462e-25, 2.842171e-14, -7.410739e-15, 1, 7.450581e-09, 3.3333337, 1.9999996)
+shape = SubResource("BoxShape3D_tmvjj")

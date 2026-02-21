@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0wb51ej3kgv2"]
+
+[ext_resource type="PackedScene" uid="uid://8df3ks012wqd" path="res://soda_fountain_machine.glb" id="1_smwh6"]
+[ext_resource type="Script" uid="uid://c6ork324hujet" path="res://drink_machine.gd" id="2_gcwyr"]
+[ext_resource type="AudioStream" uid="uid://7eelaq4pcgj1" path="res://Pouring_sound.mp3" id="3_b35k8"]
+[ext_resource type="ArrayMesh" uid="uid://yqe6am36a85i" path="res://addons/kaykit_restaurant_bits/Assets/obj/kitchentable_A.obj" id="4_gcwyr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DrinkMachine" parent="." instance=ExtResource("1_smwh6")]
+transform = Transform3D(-2, 0, 2.3841858e-07, 0, 2, 0, -2.3841858e-07, 0, -2, -10, 1.75, -6)
+script = ExtResource("2_gcwyr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DrinkMachine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DrinkMachine"]
+
+[node name="Timer" type="Timer" parent="DrinkMachine"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DrinkMachine"]
+stream = ExtResource("3_b35k8")
+
+[node name="SpawnPoint1" type="Marker3D" parent="DrinkMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, 0)
+
+[node name="SpawnPoint2" type="Marker3D" parent="DrinkMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, 0.2)
+
+[node name="SpawnPoint3" type="Marker3D" parent="DrinkMachine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.2, -0.2)
+
+[node name="KitchentableA" type="MeshInstance3D" parent="DrinkMachine"]
+transform = Transform3D(-0.5, 0, -5.9604645e-08, 0, 0.5, 0, 5.9604645e-08, 0, -0.5, 0, -0.875, 0)
+mesh = ExtResource("4_gcwyr")
+skeleton = NodePath("../../Environment")
+
+[connection signal="timeout" from="DrinkMachine/Timer" to="DrinkMachine" method="_on_timer_timeout"]

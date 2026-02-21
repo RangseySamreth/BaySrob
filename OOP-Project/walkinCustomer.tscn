@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr60d0injwoh2"]
+
+[ext_resource type="Script" uid="uid://cxsq5p65l4s5v" path="res://Customer_script.gd" id="1_urem1"]
+[ext_resource type="PackedScene" uid="uid://dbtayfhsqyqsv" path="res://Walking_ani.glb" id="2_k8t3t"]
+[ext_resource type="AudioStream" uid="uid://ug3yuw67ab22" path="res://roblox-hi-sound.mp3" id="3_ppm2q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmvjj"]
+size = Vector3(11, 7, 17)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uit24"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.050980393)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wfvv7"]
+material = SubResource("StandardMaterial3D_uit24")
+size = Vector2(0.75, 0.75)
+
+[node name="PathFollow3D" type="PathFollow3D"]
+transform = Transform3D(-0.9999082, -1.9030374e-07, 0.013347073, -4.6895566e-13, 1, 1.42579065e-05, -0.013347073, 1.4256676e-05, -0.9999082, 0, 0, 0)
+use_model_front = true
+loop = false
+script = ExtResource("1_urem1")
+
+[node name="Walking_ani" parent="." instance=ExtResource("2_k8t3t")]
+transform = Transform3D(0.29997414, -2.608158e-12, 0.0040040733, 5.708986e-08, 0.30000004, -4.2770034e-06, -0.0040040733, 4.2773495e-06, 0.29997414, -0.017918393, -0.0122859385, 0.04901537)
+
+[node name="Area3D" type="Area3D" parent="Walking_ani"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walking_ani/Area3D"]
+transform = Transform3D(1, -4.0250857e-16, -2.842171e-14, 1.3552525e-20, 1, -7.4801684e-25, 2.842171e-14, -1.2878587e-14, 1, -2.9802322e-07, 3.3333337, 7.0000014)
+visible = false
+shape = SubResource("BoxShape3D_tmvjj")
+
+[node name="OrderBubble" type="Node3D" parent="."]
+
+[node name="OrderDisplay" type="Marker3D" parent="OrderBubble"]
+transform = Transform3D(0.9999998, 0, -1.7763568e-14, 0, 1, 0, 1.7763568e-14, 0, 0.9999998, -0.75, 2, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="OrderBubble/OrderDisplay"]
+
+[node name="BubbleMesh" type="MeshInstance3D" parent="OrderBubble"]
+transform = Transform3D(-0.99999905, 0, -8.742259e-08, 0, 1, 0, 8.742259e-08, 0, -0.99999905, -0.75, 2, 0)
+mesh = SubResource("QuadMesh_wfvv7")
+skeleton = NodePath("../..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ppm2q")
+volume_db = 7.15

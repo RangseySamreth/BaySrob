@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2mbmek4hxo3o"]
+
+[ext_resource type="Script" uid="uid://cxsq5p65l4s5v" path="res://Customer_script.gd" id="1_3x3by"]
+[ext_resource type="PackedScene" uid="uid://dbtayfhsqyqsv" path="res://Walking_ani.glb" id="1_ps3et"]
+[ext_resource type="Script" uid="uid://yi5wsvme56eu" path="res://customer.gd" id="2_3x3by"]
+
+[node name="PathFollow3D" type="PathFollow3D"]
+transform = Transform3D(-0.9999082, -1.9030374e-07, 0.013347073, -4.6895566e-13, 1, 1.42579065e-05, -0.013347073, 1.4256676e-05, -0.9999082, 0, 0, 0)
+use_model_front = true
+script = ExtResource("1_3x3by")
+
+[node name="Walking_ani" parent="." instance=ExtResource("1_ps3et")]
+transform = Transform3D(0.29997414, -2.608158e-12, 0.0040040733, 5.708986e-08, 0.30000004, -4.2770034e-06, -0.0040040733, 4.2773495e-06, 0.29997414, -0.017918393, -0.0122859385, 0.04901537)
+script = ExtResource("2_3x3by")
+
+[node name="Area3D" type="Area3D" parent="Walking_ani"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walking_ani/Area3D"]

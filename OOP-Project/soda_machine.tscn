@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdvw5nkgqedvc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcdwf"]
+bg_color = Color(0.96862745, 0.90588236, 0.8156863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8901961, 0.7882353, 0.65882355, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.40784314)
+shadow_size = 10
+shadow_offset = Vector2(0, 6)
+
+[node name="Soda Machine" type="Panel"]
+offset_left = 376.0
+offset_top = 121.0
+offset_right = 649.0
+offset_bottom = 339.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcdwf")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cflxyts8xq4tx"]
+
+[ext_resource type="PackedScene" uid="uid://ddsnsdrvf04ly" path="res://hotsilog/scene.gltf" id="1_b8gb7"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_b8gb7")]
+
+[node name="Plate_lambert2_0" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate" index="0"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Rice_lambert2_0" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate/Rice" index="0"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.4, 0, 0.4)
+
+[node name="EggWhite_lambert2_0" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate/EggWhite" index="0"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="EggYolk_lambert2_0" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate/EggYolk" index="0"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="HotDog" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate" index="4"]
+transform = Transform3D(0.97442627, 0.17449555, 0.14157952, -0.19485277, 0.9699641, 0.14560877, -0.111918986, -0.16947217, 0.9791594, 0, 0.2, 0)
+
+[node name="HotDog_lambert2_0" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate/HotDog" index="0"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Hotdog_2" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate" index="5"]
+transform = Transform3D(0.9184667, 0.39402348, -0.034124143, -0.37890625, 0.9013823, 0.20961857, 0.113353536, -0.17959782, 0.97718763, -0.01, 0.62, 0)
+
+[node name="Hotdog_2_lambert2_0" parent="Sketchfab_model/HotSilog_fbx/RootNode/Plate/Hotdog_2" index="0"]
+transform = Transform3D(0.24999999, 6.4028427e-09, 3.259629e-09, -1.0477379e-09, 0.24999996, 0, 3.259629e-09, -3.7252903e-09, 0.24999996, 0.25, -0.4, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]

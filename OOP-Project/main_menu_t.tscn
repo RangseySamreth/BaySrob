@@ -1,0 +1,391 @@
+[gd_scene load_steps=22 format=3 uid="uid://cf3tsij4ruoiu"]
+
+[ext_resource type="Script" uid="uid://cl2fe7e2gmup7" path="res://menu.gd" id="1_0huav"]
+[ext_resource type="Texture2D" uid="uid://dttasnym13334" path="res://ChatGPT Image Dec 23, 2025, 05_02_37 PM.png" id="2_ixupk"]
+[ext_resource type="FontFile" uid="uid://bnlhof55m6iq3" path="res://Everlo Sans.ttf" id="3_hcvh8"]
+[ext_resource type="Texture2D" uid="uid://b4s5ru7nybka5" path="res://play.png" id="4_c8jd0"]
+[ext_resource type="Texture2D" uid="uid://l7ug76y8l3ih" path="res://book.png" id="5_btv71"]
+[ext_resource type="Texture2D" uid="uid://c62ke7dmadp6l" path="res://cogwheel.png" id="6_d7lh1"]
+[ext_resource type="Texture2D" uid="uid://dhyutli2hc55w" path="res://remove.png" id="7_t1vay"]
+[ext_resource type="AudioStream" uid="uid://f408gfhejuu0" path="res://puzzle-game-loop-bright-casual-video-game-music-249201.mp3" id="9_d6tny"]
+[ext_resource type="Script" uid="uid://puns0ey2vswj" path="res://audio_control.gd" id="10_8c0pm"]
+[ext_resource type="Script" uid="uid://66ljd68fs4gp" path="res://fullscreen_control.gd" id="11_fdy4l"]
+[ext_resource type="Texture2D" uid="uid://b6dhd7p1seaot" path="res://music-player.png" id="12_pnye8"]
+[ext_resource type="Texture2D" uid="uid://clxid7gam7o3a" path="res://addons/GodotTogether/BAY.png" id="13_3h6i2"]
+[ext_resource type="Texture2D" uid="uid://b1l8ww7lvhrej" path="res://speaker-filled-audio-tool.png" id="13_cwhxi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("2_ixupk")
+modulate_color = Color(0.52906704, 0.52906656, 0.52906686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0huav"]
+bg_color = Color(1, 0.93333334, 0.7607843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(1, 0.93333334, 0.7607843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.9876364, 0.9125953, 0.77438956, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87058824, 0.70980394, 0.5921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(1, 0.9607843, 0.8509804, 0.53333336)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.99607843, 0.92941177, 0.7921569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8627451, 0.7294118, 0.6313726, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8qtwp"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dy7ct"]
+color = Color(0.2674077, 0.24685758, 0.19987881, 1)
+thickness = 6
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0huav")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.5
+offset_top = -69.0
+offset_right = 229.5
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0huav")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.25
+offset_top = 17.0
+offset_right = 164.75
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 30
+text = "🎮 HOW TO PLAY – BAY SROB"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.75
+offset_top = 38.0
+offset_right = 214.25
+offset_bottom = 286.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 15
+text = "🍳 Starting at Level 1
+• You start with a stove
+• Use the stove to cook Bay Srob (rice)
+🍚 Serve Customers
+• Cars stop at the counter
+• Check the order above the car
+• Serve the correct item
+💰 Rewards
+• Rice = $10
+• Drink = $5
+• Each customer served = ⭐ 1 star"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Panel/Label/Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -24.0
+offset_right = 89.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Back"
+
+[node name="main_buttons" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -39.5
+offset_right = 144.5
+offset_bottom = 251.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Start" type="Button" parent="main_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "     Start Game"
+
+[node name="Play" type="Sprite2D" parent="main_buttons/Start"]
+position = Vector2(52, 27.5)
+scale = Vector2(0.060546875, 0.060546875)
+texture = ExtResource("4_c8jd0")
+
+[node name="How_to_Play" type="Button" parent="main_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "    How to play"
+
+[node name="Book" type="Sprite2D" parent="main_buttons/How_to_Play"]
+position = Vector2(52, 25.5)
+scale = Vector2(0.046875034, 0.046875082)
+texture = ExtResource("5_btv71")
+
+[node name="Setting" type="Button" parent="main_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "    Settings"
+
+[node name="Cogwheel" type="Sprite2D" parent="main_buttons/Setting"]
+position = Vector2(51, 27.5)
+scale = Vector2(0.054687496, 0.05320946)
+texture = ExtResource("6_d7lh1")
+
+[node name="Quit" type="Button" parent="main_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Quit"
+
+[node name="Remove" type="Sprite2D" parent="main_buttons"]
+position = Vector2(52, 264.5)
+scale = Vector2(0.058593795, 0.058593795)
+texture = ExtResource("7_t1vay")
+
+[node name="AudioControl" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(495, 514)
+stream = ExtResource("9_d6tny")
+autoplay = true
+bus = &"Music"
+script = ExtResource("10_8c0pm")
+
+[node name="Settings" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -74.0
+offset_right = 212.0
+offset_bottom = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qe12f")
+
+[node name="Back" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -64.0
+offset_right = 76.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Back"
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 11.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4, 0.25882354, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Settings"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 77.0
+offset_right = 368.0
+offset_bottom = 116.0
+theme_override_styles/slider = SubResource("StyleBoxLine_8qtwp")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dy7ct")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dy7ct")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSlider" type="HSlider" parent="Settings/HSlider"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 240.0
+offset_bottom = 89.0
+theme_override_styles/slider = SubResource("StyleBoxLine_8qtwp")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dy7ct")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_dy7ct")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="FullscreenControl" type="CheckButton" parent="Settings"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 190.0
+offset_right = 369.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.2674077, 0.24685758, 0.19987881, 1)
+theme_override_fonts/font = ExtResource("3_hcvh8")
+text = "Full Screen"
+script = ExtResource("11_fdy4l")
+
+[node name="MusicPlayer" type="Sprite2D" parent="Settings"]
+position = Vector2(87.00001, 93.00001)
+scale = Vector2(0.043457, 0.043457)
+texture = ExtResource("12_pnye8")
+
+[node name="SpeakerFilledAudioTool" type="Sprite2D" parent="Settings"]
+position = Vector2(87.000015, 147.00002)
+scale = Vector2(0.05468756, 0.05468756)
+texture = ExtResource("13_cwhxi")
+
+[node name="Bay" type="Sprite2D" parent="."]
+position = Vector2(562.00006, 189)
+scale = Vector2(0.37923175, 0.38378906)
+texture = ExtResource("13_3h6i2")
+
+[connection signal="pressed" from="Panel/Label/Label/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="main_buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="main_buttons/How_to_Play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="main_buttons/How_to_Play" to="." method="_on_howtoplay_pressed"]
+[connection signal="pressed" from="main_buttons/Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="main_buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_settings_pressed"]
+[connection signal="value_changed" from="Settings/HSlider" to="AudioControl" method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="Settings/FullscreenControl" to="Settings/FullscreenControl" method="_on_toggled"]

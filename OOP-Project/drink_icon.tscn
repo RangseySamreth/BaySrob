@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmm1ai6igtc60"]
+
+[ext_resource type="PackedScene" uid="uid://cnhbsbtxkdg1i" path="res://lemon_tea11/lemon_tea11.tscn" id="1_6gjp4"]
+
+[node name="DrinkRoot" type="Node3D"]
+
+[node name="LemonTea" parent="." instance=ExtResource("1_6gjp4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

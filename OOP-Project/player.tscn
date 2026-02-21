@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpu6bln8loek7"]
+
+[ext_resource type="Script" uid="uid://3360tbwg0352" path="res://player_body.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://owf3mbrd4h5h" path="res://walking_ani_hat.tscn" id="2_onrkg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vke2r"]
+size = Vector3(4.1, 24, 12)
+
+[node name="PlayerBody" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -15.987108, -1, 0)
+script = ExtResource("1_onrkg")
+
+[node name="Main_Character" parent="." instance=ExtResource("2_onrkg")]
+transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, 1, 0, 0)
+
+[node name="HandSlot" type="Node3D" parent="Main_Character"]
+transform = Transform3D(0.9999998, 0, 1.4210855e-14, 0, 0.9999998, 0, -1.4210855e-14, 0, 0.9999998, 0.25, 3.5, 3.5)
+
+[node name="RightHandSlot" type="Node3D" parent="Main_Character"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -3, 1.2, 2)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.2191245e-09, 0, 0.08999998, 0, 0.08999998, 0, -0.08999998, 0, 3.2191245e-09, 0.9790001, 1.0199999, 5.5278406e-08)
+visible = false
+shape = SubResource("BoxShape3D_vke2r")
+debug_fill = false

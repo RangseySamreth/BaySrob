@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfajxsvylnx5w"]
+
+[ext_resource type="PackedScene" uid="uid://byxcdwiqdun5g" path="res://customer_path.tscn" id="1_v0yyh"]
+[ext_resource type="PackedScene" uid="uid://d3elsabw5jdgh" path="res://path_follow_3d.tscn" id="2_4spfw"]
+[ext_resource type="Script" uid="uid://cxsq5p65l4s5v" path="res://Customer_script.gd" id="3_mwm6e"]
+[ext_resource type="Script" uid="uid://blp7ygup4v7ch" path="res://customer_order_manager.gd" id="4_0lugq"]
+[ext_resource type="Script" uid="uid://gwbmkyv37pre" path="res://customer_queue_manager.gd" id="5_wigpo"]
+[ext_resource type="Script" uid="uid://bjx2etugl0g37" path="res://customer_spawner.gd" id="6_4k5ov"]
+[ext_resource type="PackedScene" uid="uid://2mbmek4hxo3o" path="res://customer_path_follow.tscn" id="7_van41"]
+
+[sub_resource type="Curve3D" id="Curve3D_lo0dk"]
+bake_interval = 0.1
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -9.589492, 0, -0.011064291, 0.90000004, 0, 0.4, -0.90000004, 0, -0.4, -19.042524, 0, -0.046172142, -0.90000004, 0, 0.4, 0.90000004, 0, -0.4, -19.007462, 0, -2.0097423, 0, 0, 0, 0, 0, 0, -9.603269, 0, -2.0572097),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm4vd"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.050980393)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gd26k"]
+material = SubResource("StandardMaterial3D_rm4vd")
+size = Vector2(0.75, 0.75)
+
+[node name="Customer" type="Node3D"]
+
+[node name="Customer_Path" parent="." instance=ExtResource("1_v0yyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 3)
+top_level = true
+curve = SubResource("Curve3D_lo0dk")
+
+[node name="PathFollow" parent="Customer_Path" instance=ExtResource("2_4spfw")]
+transform = Transform3D(-0.99999726, 0, 0, 0, 1, 0, 0, 0, -0.99999726, 0, 0, 0)
+script = ExtResource("3_mwm6e")
+
+[node name="OrderBubble" type="Node3D" parent="Customer_Path/PathFollow"]
+
+[node name="OrderDisplay" type="Marker3D" parent="Customer_Path/PathFollow/OrderBubble"]
+transform = Transform3D(0.9999998, 0, -1.7763568e-14, 0, 1, 0, 1.7763568e-14, 0, 0.9999998, -0.75, 2, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Customer_Path/PathFollow/OrderBubble/OrderDisplay"]
+
+[node name="BubbleMesh" type="MeshInstance3D" parent="Customer_Path/PathFollow/OrderBubble"]
+transform = Transform3D(-0.99999905, 0, -8.742259e-08, 0, 1, 0, 8.742259e-08, 0, -0.99999905, -0.75, 2, 0)
+mesh = SubResource("QuadMesh_gd26k")
+skeleton = NodePath("../..")
+
+[node name="OrderManager" type="Node3D" parent="Customer_Path"]
+transform = Transform3D(4.3711267e-08, 0, -0.99999726, 0, 1, 0, 0.99999726, 0, 4.3711267e-08, 0, 0, 0)
+script = ExtResource("4_0lugq")
+
+[node name="QueueManager" type="Node3D" parent="Customer_Path"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -3)
+script = ExtResource("5_wigpo")
+
+[node name="Timer" type="Timer" parent="Customer_Path/QueueManager"]
+
+[node name="CustomerSpawner" type="Node3D" parent="Customer_Path"]
+script = ExtResource("6_4k5ov")
+customer_scene = ExtResource("7_van41")
+
+[node name="SpawnTimer" type="Timer" parent="Customer_Path/CustomerSpawner"]
+wait_time = 10.0

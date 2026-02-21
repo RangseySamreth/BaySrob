@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://fwktnd36888e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uit24"]
+
+[node name="PickupArea" type="Area3D"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0000012, 0, 3.0000014)
+shape = SubResource("BoxShape3D_uit24")
+debug_fill = false

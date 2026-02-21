@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmvekuoonly2a"]
+
+[ext_resource type="Script" uid="uid://3360tbwg0352" path="res://player_body.gd" id="1_bvaq7"]
+[ext_resource type="PackedScene" uid="uid://dbtayfhsqyqsv" path="res://Walking_ani.glb" id="2_2lce7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vke2r"]
+size = Vector3(4.1, 8, 3.8)
+
+[node name="PlayerBody" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, -1, 0)
+script = ExtResource("1_bvaq7")
+
+[node name="Main_Character" parent="." instance=ExtResource("2_2lce7")]
+transform = Transform3D(-5.602915e-08, 0, -0.29999995, 0, 0.29999995, 0, 0.29999995, 0, -5.602915e-08, 1, 0, 0)
+
+[node name="HandSlot" type="Node3D" parent="Main_Character"]
+transform = Transform3D(0.99999976, 0, 3.5527137e-15, 0, 0.99999976, 0, -3.5527137e-15, 0, 0.99999976, 0.25, 0.9, 5)
+
+[node name="RightHandSlot" type="Node3D" parent="Main_Character"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -3, 1.2, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-5.6029144e-08, 0, -0.29999992, 0, 0.29999992, 0, 0.29999992, 0, -5.6029144e-08, 21.579988, 0.59999985, -5.985002)
+shape = SubResource("BoxShape3D_vke2r")
+debug_color = Color(0, 0.5950001, 0.7, 0)
+debug_fill = false
